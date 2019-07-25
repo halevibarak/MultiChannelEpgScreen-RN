@@ -1,0 +1,402 @@
+{
+  "api": {
+    "class_name": "com.applicaster.reactnative.plugins.APReactNativeAdapter",
+    "require_startup_execution": false,
+    "react_packages": [
+      "com.rnds.DirectedScrollViewPackage"
+    ]
+  },
+  "name": "MultiChannelEpgScreen",
+  "type": "general",
+  "platform": "android",
+  "identifier": "MultiChannelEpgScreen",
+  "author_name": "S. Borkin",
+  "description": "Scrollable horizontal list of epg for multiple channels",
+  "author_email": "s.borkin@applicaster.com",
+  "manifest_version": "1.0.0",
+  "min_zapp_sdk": "8.2.0-RC",
+  "react_native": true,
+  "ui_builder_support": true,
+  "screen": true,
+  "npm_dependencies": [
+    "zy-react-native-directed-scrollview@1.3.8"
+  ],
+  "project_dependencies": [
+    {
+      "zy-react-native-directed-scrollview": "node_modules/zy-react-native-directed-scrollview/android"
+    }
+  ],
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEPG/0_50_4/android/index.android.bundle.js",
+  "extra_dependencies": [],
+  "whitelisted_account_ids": [
+    "5818cf82279a4a000ff1b6aa"
+  ],
+  "dependency_repository_url": [],
+  "deprecated_since_zapp_sdk": "",
+  "unsupported_since_zapp_sdk": "",
+  "custom_configuration_fields": [
+    {
+      "type": "text",
+      "key": "dsp_name"
+    }
+  ],
+  "data": {
+    "fields": [
+      {
+        "key": "source",
+        "type": "text_input"
+      },
+      {
+        "key": "type",
+        "type": "select",
+        "options": []
+      }
+    ]
+  },
+  "styles": {
+    "fields": [
+      {
+        "key": "screen_bg_color",
+        "label": "Screen bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(0, 0, 0, 1)",
+        "label_tooltip": "bg color for the whole screen"
+      },
+      {
+        "key": "loading_color",
+        "label": "Loading color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "the indicator shown while loading the epg"
+      },
+      {
+        "key": "day_selector_title_font_family_ios",
+        "label": "Day selector font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the title of a day in the selector bar"
+      },
+      {
+        "key": "day_selector_title_font_family_android",
+        "label": "Day selector font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the title of a day in the selector bar"
+      },
+      {
+        "key": "day_selector_title_font_color",
+        "label": "Day selector title font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the title of a day in the selector bar"
+      },
+      {
+        "key": "day_selector_title_font_color_selected",
+        "label": "Day selector selected font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 0, 0, 1)",
+        "label_tooltip": "font for the title of a day in the selector bar"
+      },
+      {
+        "key": "day_selector_title_font_size",
+        "label": "Day selector title font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the title of a day in the selector bar"
+      },
+      {
+        "key": "day_selector_bg_color",
+        "label": "Day selector bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "bg color for the day selector bar"
+      },
+      {
+        "key": "time_title_font_family_ios",
+        "label": "Time font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the title of a time in the time bar"
+      },
+      {
+        "key": "time_title_font_family_android",
+        "label": "Time font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the title of a time in the time bar"
+      },
+      {
+        "key": "time_title_font_color",
+        "label": "Time title font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the title of a time in the time bar"
+      },
+      {
+        "key": "time_title_font_size",
+        "label": "Time title font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the title of a time in the time bar"
+      },
+      {
+        "key": "timebar_mark_color",
+        "label": "Time bar mark color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "color for the vertical mark below each time in the time bar"
+      },
+      {
+        "key": "timebar_bg_color",
+        "label": "Time bar bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "bg color for the time bar"
+      },
+      {
+        "key": "channel_list_vertical_border_color",
+        "label": "Channel list vertical border color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "border color for the separator between the whole height of the channel list and the programs"
+      },
+      {
+        "key": "program_title_font_family_ios",
+        "label": "Program list title font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the show name of a program"
+      },
+      {
+        "key": "program_title_font_family_android",
+        "label": "Program list title font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the show name of a program"
+      },
+      {
+        "key": "program_title_font_color",
+        "label": "Program list title font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the show name of a program"
+      },
+      {
+        "key": "program_title_font_size",
+        "label": "Program list title font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the show name of a program"
+      },
+      {
+        "key": "program_subtitle_font_family_ios",
+        "label": "Program list subtitle font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the episode name of a program"
+      },
+      {
+        "key": "program_subtitle_font_family_android",
+        "label": "Program list subtitle font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the episode name of a program"
+      },
+      {
+        "key": "program_subtitle_font_color",
+        "label": "Program list subtitle font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the episode name of a program"
+      },
+      {
+        "key": "program_subtitle_font_size",
+        "label": "Program list subtitle font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the episode name of a program"
+      },
+      {
+        "key": "program_list_border_color",
+        "label": "Program list border color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(0, 0, 0, 1)",
+        "label_tooltip": "border color for each cell in the program list"
+      },
+      {
+        "key": "program_list_bg_color",
+        "label": "Program list bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(0, 0, 0, 1)",
+        "label_tooltip": "bg color for each cell in the program list"
+      },
+      {
+        "key": "program_list_current_bg_color",
+        "label": "Program list current bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(0, 0, 0, 1)",
+        "label_tooltip": "bg color for each cell in the program list that is currently live"
+      },
+      {
+        "key": "program_list_now_indicator_color",
+        "label": "Program list now indicator color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "color for the vertical indicator for the current time"
+      },
+      {
+        "key": "program_list_go_to_now_font_family_ios",
+        "label": "Program list go to now font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the button that scrolls the epg list to the current time"
+      },
+      {
+        "key": "program_list_go_to_now_font_family_android",
+        "label": "Program list go to now font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the button that scrolls the epg list to the current time"
+      },
+      {
+        "key": "program_list_go_to_now_font_color",
+        "label": "Program list go to now font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the button that scrolls the epg list to the current time"
+      },
+      {
+        "key": "program_list_go_to_now_font_size",
+        "label": "Program list go to now font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the button that scrolls the epg list to the current time"
+      },
+      {
+        "key": "program_list_go_to_now_bg_color",
+        "label": "Program list go to now bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "bg color for the button that scrolls the epg list to the current time"
+      },
+      {
+        "key": "day_selector_today_text",
+        "label": "Today text",
+        "type": "text",
+        "initial_value": "Today",
+        "label_tooltip": "text for the day selector"
+      },
+      {
+        "key": "day_selector_tomorrow_text",
+        "label": "Tomorrow text",
+        "type": "text",
+        "initial_value": "Tomorrow",
+        "label_tooltip": "text for the day selector"
+      },
+      {
+        "key": "program_info_screen_bg_color",
+        "label": "Program info screen bg color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "bg color for the program modal screen"
+      },
+      {
+        "key": "program_info_title_font_family_ios",
+        "label": "Program info screen title font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the title of a program in the info modal"
+      },
+      {
+        "key": "program_info_title_font_family_android",
+        "label": "Program info screen title font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the title of a program in the info modal"
+      },
+      {
+        "key": "program_info_title_font_color",
+        "label": "Program info screen title font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the title of a program in the info modal"
+      },
+      {
+        "key": "program_info_title_font_size",
+        "label": "Program info screen title font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the title of a program in the info modal"
+      },
+      {
+        "key": "program_info_subtitle_font_family_ios",
+        "label": "Program info screen subtitle font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the subtitle of a program in the info modal"
+      },
+      {
+        "key": "program_info_subtitle_font_family_android",
+        "label": "Program info screen subtitle font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the subtitle of a program in the info modal"
+      },
+      {
+        "key": "program_info_subtitle_font_color",
+        "label": "Program info screen subtitle font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the subtitle of a program in the info modal"
+      },
+      {
+        "key": "program_info_subtitle_font_size",
+        "label": "Program info screen subtitle font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the subtitle of a program in the info modal"
+      },
+      {
+        "key": "program_info_time_font_family_ios",
+        "label": "Program info screen time font family - iOS",
+        "type": "ios_font_selector",
+        "initial_value": "HelveticaNeue-Medium",
+        "label_tooltip": "font for the time of a program in the info modal"
+      },
+      {
+        "key": "program_info_time_font_family_android",
+        "label": "Program info screen time font family - Android",
+        "type": "android_font_selector",
+        "initial_value": "Roboto-Medium",
+        "label_tooltip": "font for the time of a program in the info modal"
+      },
+      {
+        "key": "program_info_time_font_color",
+        "label": "Program info screen time font color",
+        "type": "color_picker_rgba",
+        "initial_value": "rgba(255, 255, 255, 1)",
+        "label_tooltip": "font for the time of a program in the info modal"
+      },
+      {
+        "key": "program_info_time_font_size",
+        "label": "Program info screen time font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the time of a program in the info modal"
+      },
+      {
+        "type": "uploader",
+        "key": "ios_assets_bundle",
+        "tooltip_text": "additional assets that are required by the plugin"
+      },
+      {
+        "type": "uploader",
+        "key": "android_assets_bundle",
+        "tooltip_text": "additional assets that are required by the plugin"
+      }
+    ]
+  },
+  "targets": [
+    "mobile"
+  ]
+}

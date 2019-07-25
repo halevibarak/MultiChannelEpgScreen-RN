@@ -1,0 +1,25 @@
+machine:
+  node:
+    version: 8.9.0
+  post:
+    - npm install -g npm
+
+
+dependencies:
+  override:
+    - npm install --no-optional
+    - sudo pip install awscli
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - mkdir -p tmp/build/ios
+      - mkdir -p tmp/build/android
+      - npm run deploy
+  staging:
+    branch: staging
+    commands:
+      - mkdir -p tmp/build/ios
+      - mkdir -p tmp/build/android
+      - npm run deploy:staging

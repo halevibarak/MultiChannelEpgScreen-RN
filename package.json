@@ -1,0 +1,68 @@
+{
+  "name": "@applicaster/multi-channel-epg-screen",
+  "version": "1.0.0",
+  "description": "RN screen plugin with scrollable horizontal list of epg for multiple channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava -v",
+    "beautify": "node_modules/.bin/eslint --fix .",
+    "adb": "adb reverse tcp:8081 tcp:8081",
+    "lint": "eslint .",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "npm run build:ios && npm run build:android",
+    "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output tmp/build/ios/index.ios.bundle.js",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output tmp/build/android/index.android.bundle.js",
+    "deploy": "npm run deploy:ios && npm run deploy:android",
+    "deploy:staging": "npm run deploy:staging:ios && npm run deploy:staging:android",
+    "deploy:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/$npm_package_version/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/$npm_package_version/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:staging:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-development.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:staging:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-development.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/applicaster-plugins/MultiChannelEpgScreen"
+  },
+  "author": "Applicaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/applicaster-plugins/MultiChannelEpgScreen/issues"
+  },
+  "homepage": "https://github.com/applicaster-plugins/MultiChannelEpgScreen#readme",
+  "dependencies": {
+    "react-native-zapp-bridge": "1.0.3",
+    "@applicaster/zapp-pipes-provider-zappn": "^1.0.14",
+    "react-native-device-detection": "0.2.0",
+    "react-native-directed-scrollview": "2.0.0",
+    "react-native-cached-image": "^1.4.3",
+    "rn-fetch-blob": "0.10.13",
+    "axios": "^0.18.1",
+    "immutable": "^3.8.1",
+    "moment": "^2.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-native": "0.50.4",
+    "react-native-linear-gradient": "^2.4.0",
+    "react-native-vector-icons": "^4.2.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-observable": "^0.14.1",
+    "redux-thunk": "^2.1.0",
+    "remote-redux-devtools": "^0.5.7",
+    "reselect": "^2.5.4",
+    "rxjs": "^5.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-react-native": "^2.1.0",
+    "babel-register": "^6.18.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-react-native": "^2.3.2"
+  }
+}
