@@ -164,7 +164,7 @@ response:
 
 * the response should contain the programs ordered by `starts_at` from early to latest
 * a program `ends_at` doesn't have to match the next program `starts_at`, the app will handle it by displaying blank space between the two cells
-* `title` is the name of the series. can be empty, if it's a movie and not a series for example
-* `show_name` will be displayed in the first line of the program cell, it's either the movies name, or the episode title
+* `show_name` is the name of the series. can be empty, if it's a movie and not a series for example
+* `title` will be displayed in the first line of the program cell, it's either the movies name, or the episode title
 * the `image` under `media_item`, will be displayed in the program info popup that appears if the user presses on a program cell
 * `summary` will also be disaplyed in the program info popup
