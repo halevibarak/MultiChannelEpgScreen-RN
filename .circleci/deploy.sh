@@ -17,6 +17,11 @@ function skip_build {
   echo 'is not a deployment branch. Skipping deployment to S3 step.'
 }
 
+function deploy_master_legacy {
+  npm run deploy:legacy
+  exit_if_push_failed
+}
+
 function exit_if_push_failed {
   ERROR_CODE=$?
   if [ "$ERROR_CODE" != 0 ]
@@ -29,6 +34,9 @@ function exit_if_push_failed {
 case $ci_branch in
 "master")
   deploy_master 
+  ;;
+"master_legacy")
+  deploy_master_legacy
   ;;
 "staging")
   deploy_staging

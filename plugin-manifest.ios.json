@@ -19,10 +19,10 @@
   "ui_builder_support": true,
   "screen": true,
   "npm_dependencies": [],
-  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.0/ios/index.ios.bundle",
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/0_50_4/1.0.0/ios/index.ios.bundle",
   "extra_dependencies": [
     {
-      "react-native-directed-scrollview": ":git => 'https://github.com/chrisfisher/react-native-directed-scrollview'"
+      "RCTDirectedScrollView": "'~> 2.0.0'"
     },
     {
       "react-native-fetch-blob": ":git => 'https://github.com/wkh237/react-native-fetch-blob.git', :commit => 'fd81e468b1a9e5caffde44d807deec3c07130a69'"
@@ -105,6 +105,13 @@
         "label_tooltip": "font for the title of a day in the selector bar"
       },
       {
+        "key": "day_selector_title_font_size_pad",
+        "label": "Day selector title font size - iPad/Tablet",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the title of a day in the selector bar"
+      },
+      {
         "key": "day_selector_bg_color",
         "label": "Day selector bg color",
         "type": "color_picker_rgba",
@@ -135,6 +142,13 @@
       {
         "key": "time_title_font_size",
         "label": "Time title font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the title of a time in the time bar"
+      },
+      {
+        "key": "time_title_font_size_pad",
+        "label": "Time title font size - iPad/Tablet",
         "type": "number_input",
         "initial_value": "14",
         "label_tooltip": "font for the title of a time in the time bar"
@@ -189,6 +203,13 @@
         "label_tooltip": "font for the show name of a program"
       },
       {
+        "key": "program_title_font_size_pad",
+        "label": "Program list title font size - iPad/Tablet",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the show name of a program"
+      },
+      {
         "key": "program_subtitle_font_family_ios",
         "label": "Program list subtitle font family - iOS",
         "type": "ios_font_selector",
@@ -212,6 +233,13 @@
       {
         "key": "program_subtitle_font_size",
         "label": "Program list subtitle font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the episode name of a program"
+      },
+      {
+        "key": "program_subtitle_font_size_pad",
+        "label": "Program list subtitle font size - iPad/Tablet",
         "type": "number_input",
         "initial_value": "14",
         "label_tooltip": "font for the episode name of a program"
@@ -273,6 +301,13 @@
         "label_tooltip": "font for the button that scrolls the epg list to the current time"
       },
       {
+        "key": "program_list_go_to_now_font_size_pad",
+        "label": "Program list go to now font size - iPad/Tablet",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the button that scrolls the epg list to the current time"
+      },
+      {
         "key": "program_list_go_to_now_bg_color",
         "label": "Program list go to now bg color",
         "type": "color_picker_rgba",
@@ -329,6 +364,13 @@
         "label_tooltip": "font for the title of a program in the info modal"
       },
       {
+        "key": "program_info_title_font_size_pad",
+        "label": "Program info screen title font size - iPad/Tablet",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the title of a program in the info modal"
+      },
+      {
         "key": "program_info_subtitle_font_family_ios",
         "label": "Program info screen subtitle font family - iOS",
         "type": "ios_font_selector",
@@ -357,6 +399,13 @@
         "label_tooltip": "font for the subtitle of a program in the info modal"
       },
       {
+        "key": "program_info_subtitle_font_size_pad",
+        "label": "Program info screen subtitle font size - iPad/Tablet",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the subtitle of a program in the info modal"
+      },
+      {
         "key": "program_info_time_font_family_ios",
         "label": "Program info screen time font family - iOS",
         "type": "ios_font_selector",
@@ -380,6 +429,13 @@
       {
         "key": "program_info_time_font_size",
         "label": "Program info screen time font size",
+        "type": "number_input",
+        "initial_value": "14",
+        "label_tooltip": "font for the time of a program in the info modal"
+      },
+      {
+        "key": "program_info_time_font_size_pad",
+        "label": "Program info screen time font size - iPad/Tablet",
         "type": "number_input",
         "initial_value": "14",
         "label_tooltip": "font for the time of a program in the info modal"

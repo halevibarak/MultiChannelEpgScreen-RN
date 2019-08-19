@@ -17,7 +17,9 @@
     "deploy:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/$npm_package_version/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
     "deploy:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/$npm_package_version/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
     "deploy:staging:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-development.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
-    "deploy:staging:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-development.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+    "deploy:staging:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-development.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:legacy": "npm run deploy:legacy:ios",
+    "deploy:legacy:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/0_50_4/$npm_package_version/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "repository": {
     "type": "git",
