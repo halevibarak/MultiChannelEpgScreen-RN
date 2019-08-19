@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Dimensions, StyleSheet, Modal, View, Text} from 'react-native';
+import { Dimensions, StyleSheet, Modal, View, Image, Text} from 'react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -49,7 +49,7 @@ class ProgramInfo extends Component {
 	getImage(program) {
 		return (
 			<View>
-				<CachedImage
+				<Image
 					source={{ uri: program.imageUrl }}
 					fallbackSource={Zapp.getImage('placeholder_big_item')}
 					useQueryParamsInCacheKey={true}

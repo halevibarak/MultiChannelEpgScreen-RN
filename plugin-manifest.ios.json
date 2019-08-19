@@ -19,7 +19,7 @@
   "ui_builder_support": true,
   "screen": true,
   "npm_dependencies": [],
-  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/0_50_4/1.0.0/ios/index.ios.bundle",
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/0_50_4/1.0.0/ios/index.ios.bundle.js",
   "extra_dependencies": [
     {
       "RCTDirectedScrollView": "'~> 2.0.0'"
