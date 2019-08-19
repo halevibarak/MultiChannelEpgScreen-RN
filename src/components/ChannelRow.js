@@ -25,7 +25,7 @@ export default class ChannelRow extends Component {
 
     return (
       <TouchableOpacity
-        onLongPress={() => this.handleProgramPress(program)}
+        onPress={() => this.handleProgramPress(program)}
         style={[this.styles.program, isCurrent && this.styles.currentProgram, {width: width}]}>
         <Text
           numberOfLines={1}

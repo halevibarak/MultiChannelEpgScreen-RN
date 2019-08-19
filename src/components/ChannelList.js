@@ -133,16 +133,16 @@ class ChannelList extends Component {
 
   getLogo(channel) {
     return (
-      <TouchableOpacity
+      <View
         onPress={() => {
-          Alert.alert(channel.name, String(channel.epgChannelId));
-        }}>
-      <Image
-        style={this.styles.logo}
-        source={{ uri: channel.imageUrl }}
-        resizeMode="contain" />
-        </TouchableOpacity>
-
+          // Alert.alert(channel.name, String(channel.epgChannelId));
+        }}
+        style={this.styles.logoContainer}>
+        <Image
+          style={this.styles.logo}
+          source={{ uri: channel.imageUrl }}
+          resizeMode="contain" />
+      </View>
     );
   }
 
@@ -252,7 +252,7 @@ const getStylesObject = () => ({
     flexGrow: 1
   },
   timebar: {
-    paddingLeft: 64,
+    paddingLeft: 87,
     height: 32,
     paddingTop: 4,
     flexDirection: 'row',
@@ -275,7 +275,7 @@ const getStylesObject = () => ({
     backgroundColor: Zapp.getColor('timebar_mark_color')
   },
   logos: {
-    width: 64,
+    width: 87,
     flexDirection: 'column',
     paddingTop: 32,
     borderRightWidth: 1,
@@ -285,10 +285,16 @@ const getStylesObject = () => ({
     top: 0,
     bottom: 0
   },
-  logo: {
+  logoContainer: {
     height: 58,
     alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: Zapp.getColor('channel_list_vertical_border_color')
+  },
+  logo: {
+    width: 64,
+    height: 48,
   },
   programsRow: {
     height: 58
@@ -312,7 +318,7 @@ const getStylesObject = () => ({
     ...Zapp.getFontStyleObject('program_list_go_to_now_font')
   },
   nowContainer: {
-    marginLeft: 64,
+    marginLeft: 87,
     flexDirection: 'column',
     alignItems: 'center',
     position: 'absolute',
