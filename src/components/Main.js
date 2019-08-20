@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
+import { Platform, StyleSheet, View, ActivityIndicator } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -57,14 +57,19 @@ const getStylesObject = () => ({
     flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'column',
-    paddingBottom: 49,
+    alignItems: 'flex-start',
+    marginBottom: Platform.OS === 'ios' ? 49 : 0,
     backgroundColor: Zapp.getColor('screen_bg_color')
   },
   days: {
+    flex: 1,
+    alignSelf: 'stretch',
+    zIndex: 2
   },
   channels: {
     flex: 1,
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    zIndex: 1
   },
   loadingContainer: {
     flex: 1,

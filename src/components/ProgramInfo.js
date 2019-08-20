@@ -8,7 +8,6 @@ import { bindActionCreators } from 'redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
-import { CachedImage } from 'react-native-cached-image';
 
 import { hideProgramInfo } from '../actions';
 

@@ -3,37 +3,35 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
 import configureStore from './store';
-import { loadChannels } from './actions/channels';
 
 import { Main } from './components';
 
-import dates from './helpers/dates'
+import * as Dates from './helpers/dates'
 
 class App extends Component {
   constructor(props) {
     super(props);
-    // dates.setLocale(props.settings.APCurrentLanguage);
+    // Dates.setLocale(props.settings.APCurrentLanguage);
   }
 
   componentWillMount() {
-    const { BundleIdentifier, platform = "android" } = this.props;
+    const { platform = 'android', BundleIdentifier } = this.props; // eslint-disable-line no-unused-vars
 
     let settings = this.props.settings && JSON.parse(this.props.settings);
 
     const store = configureStore({
       settings: {
-        APAccountID: settings.accountId,
-        BundleIdentifier: BundleIdentifier,
+        ...settings,
+        BundleIdentifier,
         Store: platform.toLowerCase(),
       },
     }, process.env.NODE_ENV);
-
+   
+		console.disableYellowBox = true;
 
     let extra_props = this.props['extra_props'] && JSON.parse(this.props['extra_props']);
     global.zappConfig = extra_props['uibuilder_screen_model']['styles'];
     
-    store.dispatch(loadChannels());
-
     this.store = store;
   }
   

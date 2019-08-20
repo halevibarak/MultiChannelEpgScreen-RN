@@ -1,7 +1,9 @@
+const Device = require('react-native-device-detection');
+
 export function getFontStyleObject(zappKey, isSelected) {
 	let result = {};
 
-	let family = global.zappConfig[zappKey + '_android'];
+	let family = global.zappConfig[zappKey + '_family_android'];
 	if (family) {
 		result['fontFamily'] = family;
 	}
@@ -11,7 +13,7 @@ export function getFontStyleObject(zappKey, isSelected) {
 		result['color'] = color;
 	}
 
-	let size = global.zappConfig[zappKey + 'size'];
+	let size = global.zappConfig[zappKey + '_size' + (Device.isTablet ? '_pad' : '')];
 	if (size) {
 		result['fontSize'] = parseInt(size);
 	}
@@ -30,5 +32,10 @@ export function getImage(imageKey) {
 
 export function getConfig(configKey) {
 	let configValue = global.zappConfig[configKey];
-	return (configValue && configValue.length > 0) || null;
+
+	if (!configValue || configValue.length == 0) {
+		return null;
+	}
+
+	return configValue;
 }

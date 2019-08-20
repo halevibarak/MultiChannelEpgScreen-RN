@@ -95,7 +95,6 @@ class DaySelector extends Component {
 
 		return (
 			<ScrollView
-				ref={this.bindScrollView}
 				style={[this.props.style, this.styles.scrollView]}
 				contentContainerStyle={this.styles.daysContainer}
 				horizontal
