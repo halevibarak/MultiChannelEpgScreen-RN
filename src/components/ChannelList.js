@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import ScrollView, { ScrollViewChild } from 'react-native-directed-scrollview';
+import ScrollView, { ScrollViewChild } from '@applicaster/react-native-directed-scrollview';
 
 import { ChannelRow } from './index';
 
@@ -202,7 +202,7 @@ class ChannelList extends Component {
           onScrollEndDrag={(event) => {
             this.positionY = event.nativeEvent.contentOffset.y
           }}
-          onLayout={() => Dates.isToday(this.props.dayStart) && this.scrollToNow(false)}
+          // onLayout={() => Dates.isToday(this.props.dayStart) && this.scrollToNow(false)}
           ref={ref => this.scrollViewRef = ref}
           style={this.styles.scroll}>
           <ScrollViewChild
