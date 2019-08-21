@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import LinearGradient from 'react-native-linear-gradient';
 
 import { hideProgramInfo } from '../actions';
 
@@ -84,14 +83,13 @@ class ProgramInfo extends Component {
 				animationType={'fade'}
 				onRequestClose={hideProgramInfo}
 				style={this.styles.main}>
-				<LinearGradient
-					{...gradient}
+				<View
 					style={this.styles.gradient}>
 					<View
 						style={this.styles.content}>
 						{this.getContent(program)}
 					</View>
-        </LinearGradient>
+        </View>
 			</Modal>
     );
   }
@@ -133,7 +131,7 @@ const getStylesObject = () => ({
 		flex: 1,
 		alignSelf: 'stretch',
 		flexDirection: 'column',
-		backgroundColor: 'black'//Zapp.getColor('program_info_screen_bg_color')
+		backgroundColor: Zapp.getColor('program_info_screen_bg_color')
 	},
 	imageContainer: {
 		flex: 1,
