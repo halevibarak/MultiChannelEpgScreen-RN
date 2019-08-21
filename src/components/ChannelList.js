@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import ScrollView, { ScrollViewChild } from 'react-native-directed-scrollview';
+import ScrollView, { ScrollViewChild } from '@applicaster/react-native-directed-scrollview';
 
 import { ChannelRow } from './index';
 

@@ -18,11 +18,13 @@
   "react_native": true,
   "ui_builder_support": true,
   "screen": true,
-  "npm_dependencies": [],
-  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/0_50_4/1.0.0/ios/index.ios.bundle",
+  "npm_dependencies": [
+    "@applicaster/react-native-directed-scrollview@^1.0.0"
+  ],
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/0_50_4/1.0.0/ios/index.ios.bundle.js",
   "extra_dependencies": [
     {
-      "RCTDirectedScrollView": "'~> 2.0.0'"
+      "RCTDirectedScrollView": ":path => 'node_modules/@applicaster/RCTDirectedScrollView.podspec"
     },
     {
       "react-native-fetch-blob": ":git => 'https://github.com/wkh237/react-native-fetch-blob.git', :commit => 'fd81e468b1a9e5caffde44d807deec3c07130a69'"

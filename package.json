@@ -34,8 +34,8 @@
   "dependencies": {
     "react-native-zapp-bridge": "1.0.3",
     "@applicaster/zapp-pipes-provider-zappn": "^1.0.14",
+    "@applicaster/react-native-directed-scrollview": "^1.0.0",
     "react-native-device-detection": "0.2.0",
-    "react-native-directed-scrollview": "2.0.0",
     "react-native-cached-image": "^1.4.3",
     "rn-fetch-blob": "0.10.13",
     "axios": "^0.18.1",
