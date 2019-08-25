@@ -95,27 +95,6 @@ class ProgramInfo extends Component {
   }
 }
 
-const gradient = {
-	start: {
-		x: 0.0,
-		y: 0.0 
-	},
-	end: {
-		x: 0.0,
-		y: 1.0
-	},
-	locations: [
-		0,
-		0.5,
-		1.0,
-	],
-	colors:[
-		'#161616cc',
-		'#161616ff',
-		'#161616cc',
-	]
-}
-
 const getStylesObject = () => ({
   main: {
     flex: 1,
@@ -125,13 +104,14 @@ const getStylesObject = () => ({
     flex: 1,
 		alignSelf: 'stretch',
 		paddingVertical: 100,
-		paddingHorizontal: 16
+		paddingHorizontal: 16,
+		backgroundColor: Zapp.getColor('program_info_screen_bg_color')
 	},
 	content: {
 		flex: 1,
 		alignSelf: 'stretch',
 		flexDirection: 'column',
-		backgroundColor: Zapp.getColor('program_info_screen_bg_color')
+		backgroundColor: 'black'
 	},
 	imageContainer: {
 		flex: 1,

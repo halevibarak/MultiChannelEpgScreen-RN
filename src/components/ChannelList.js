@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, ViewPropTypes, StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
+import { ViewPropTypes, StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScrollView, { ScrollViewChild } from '@applicaster/react-native-directed-scrollview';
 
-import { ChannelRow } from './index';
+import { ChannelRow, NowIndicator } from './index';
 
 import { showProgramInfo } from '../actions';
 
@@ -30,40 +29,9 @@ class ChannelList extends Component {
     style: ViewPropTypes.style
   };
 
-  state = {
-    currentTimeWidth: 0
-  }
-
   styles = StyleSheet.create(getStylesObject());
   positionY = 0;
-
-  componentDidMount() {
-    const { channels } = this.props;
-
-    if (!channels || channels.length == 0) {
-      return;
-    }
-
-    this.updateCurrentTime();
-
-    this.nowIndicatorUpdater = setInterval(
-      () => this.updateCurrentTime(),
-      60 * 1000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.nowIndicatorUpdater);
-  }
-
-  updateCurrentTime() {
-    const now = Dates.getCurrentTime();
-    const width = Dates.getWidthForInterval(now - this.props.dayStart);
-
-    this.setState({
-      currentTimeWidth: width
-    });
-  }
+  scrollViewRef = null;
 
   scrollToNow = (animate) => {
     const now = Dates.getCurrentTime();
@@ -98,25 +66,6 @@ class ChannelList extends Component {
     );
   }
 
-  getNowIndicator() {
-    const icon = (
-      <Icon
-        name="arrow-drop-down"
-        {...getArrow()}
-        style={this.styles.nowIcon} />
-    );
-
-    const line = (
-      <View
-        style={this.styles.nowLine} />
-    );
-
-    return [
-      icon,
-      line
-    ];
-  }
-
   getChannels(channels) {
     const rows = channels.map(channel => {
       return (
@@ -134,9 +83,6 @@ class ChannelList extends Component {
   getLogo(channel) {
     return (
       <View
-        onPress={() => {
-          // Alert.alert(channel.name, String(channel.epgChannelId));
-        }}
         style={this.styles.logoContainer}>
         <Image
           style={this.styles.logo}
@@ -176,6 +122,18 @@ class ChannelList extends Component {
     return times;
   }
 
+  handleDidLayout = (event) => {
+    const { dayStart } = this.props;
+
+    if (!dayStart) {
+      return;
+    }
+
+    if (Dates.isToday(dayStart)) {
+      this.scrollToNow(false);
+    }
+  }
+
   render() {
     const { channels } = this.props;
 
@@ -196,25 +154,24 @@ class ChannelList extends Component {
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={this.styles.content}
+          onLayout={this.handleDidLayout}
           onScroll={(event) => {
             this.positionY = event.nativeEvent.contentOffset.y
           }}
           onScrollEndDrag={(event) => {
             this.positionY = event.nativeEvent.contentOffset.y
           }}
-          // onLayout={() => Dates.isToday(this.props.dayStart) && this.scrollToNow(false)}
-          ref={ref => this.scrollViewRef = ref}
+          ref={ref => {
+            this.scrollViewRef = ref;
+          }}
           style={this.styles.scroll}>
           <ScrollViewChild
             scrollDirection={'both'}
             style={this.styles.table}>
             {this.getChannels(channels)}
           </ScrollViewChild>
-          <ScrollViewChild
-            scrollDirection={'horizontal'}
-            style={[this.styles.nowContainer, { left: this.state.currentTimeWidth }]}>
-            {this.getNowIndicator()}
-          </ScrollViewChild>
+          <NowIndicator 
+            dayStart={this.props.dayStart} />
           <ScrollViewChild
             scrollDirection={'vertical'}
             style={this.styles.logos}>
@@ -234,11 +191,6 @@ class ChannelList extends Component {
 
 const timeWidth = Dates.Program.DURATION_WIDTH_MINUTE_MULT * Dates.Program.TIMEBAR_MINUTES_INTERVAL;
 const totalProgramsWidth = timeWidth*48;
-
-const getArrow = () => { return {
-  size: 36,
-  color: Zapp.getColor('program_list_now_indicator_color')
-}}
 
 const getStylesObject = () => ({
   main: {
@@ -316,26 +268,7 @@ const getStylesObject = () => ({
   },
   goToNow: {
     ...Zapp.getFontStyleObject('program_list_go_to_now_font')
-  },
-  nowContainer: {
-    marginLeft: 87,
-    flexDirection: 'column',
-    alignItems: 'center',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    backgroundColor: 'transparent'
-  },
-  nowIcon: {
-    marginTop: 14,
-    marginBottom: -14
-  },
-  nowLine: {
-    flex: 1,
-    width: 1,
-    backgroundColor: Zapp.getColor('program_list_now_indicator_color')
-  },
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);
