@@ -9,11 +9,6 @@ import { Main } from './components';
 import * as Dates from './helpers/dates'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    // Dates.setLocale(props.settings.APCurrentLanguage);
-  }
-
   componentWillMount() {
     const { platform = 'android', BundleIdentifier } = this.props; // eslint-disable-line no-unused-vars
 
@@ -28,6 +23,8 @@ class App extends Component {
     }, process.env.NODE_ENV);
    
 		console.disableYellowBox = true;
+
+    Dates.setLocale(settings.locale);
 
     let extra_props = this.props['extra_props'] && JSON.parse(this.props['extra_props']);
     global.zappConfig = extra_props['uibuilder_screen_model']['styles'];
