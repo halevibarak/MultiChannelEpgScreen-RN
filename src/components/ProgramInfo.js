@@ -6,7 +6,7 @@ import { Dimensions, StyleSheet, Modal, View, Image, Text} from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from '@applicaster/react-native-vector-icons/MaterialIcons';
 
 import { hideProgramInfo } from '../actions';
 

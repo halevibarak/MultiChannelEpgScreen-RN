@@ -1,11 +1,5 @@
-import React from 'react';
 import { AppRegistry } from 'react-native';
 
-import App from './src/App';
+import RNRoot from './src/RNRoot';
 
-const RNRoot = props => (
-  <App { ...props } platform="iOS" />
-);
-
-// Module name
 AppRegistry.registerComponent('RNRoot', () => RNRoot);

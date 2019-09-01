@@ -1,8 +1,8 @@
 {
   "name": "@applicaster/multi-channel-epg-screen",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "RN screen plugin with scrollable horizontal list of epg for multiple channels",
-  "main": "index.js",
+  "main": "./export.js",
   "scripts": {
     "test": "ava -v",
     "beautify": "node_modules/.bin/eslint --fix .",
@@ -32,9 +32,10 @@
   },
   "homepage": "https://github.com/applicaster-plugins/MultiChannelEpgScreen#readme",
   "dependencies": {
-    "react-native-zapp-bridge": "1.0.3",
+    "react-native-zapp-bridge": "^2.7.4",
     "@applicaster/zapp-pipes-provider-zappn": "^1.0.14",
     "@applicaster/react-native-directed-scrollview": "^1.0.0",
+    "@applicaster/react-native-vector-icons": "^6.0.3",
     "react-native-device-detection": "0.2.0",
     "axios": "^0.18.1",
     "immutable": "^3.8.1",
@@ -42,7 +43,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-native": "0.59.10",
-    "react-native-vector-icons": "^4.6.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.3.0",
@@ -70,5 +70,10 @@
     "@storybook/addon-links": "^3.4.8",
     "@storybook/addons": "^3.4.8",
     "@storybook/react-native": "^3.4.8"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-zapp-bridge": "*"
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ViewPropTypes, StyleSheet, View } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from '@applicaster/react-native-vector-icons/MaterialIcons';
 
 import { ScrollViewChild } from '@applicaster/react-native-directed-scrollview';
 

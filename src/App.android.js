@@ -27,7 +27,7 @@ class App extends Component {
     Dates.setLocale(settings.locale);
 
     let extra_props = this.props['extra_props'] && JSON.parse(this.props['extra_props']);
-    global.zappConfig = extra_props['uibuilder_screen_model']['styles'];
+    global.zappConfig = extra_props['extraProps'];
     
     this.store = store;
   }

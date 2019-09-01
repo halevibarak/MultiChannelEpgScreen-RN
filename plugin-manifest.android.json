@@ -3,9 +3,12 @@
     "class_name": "com.applicaster.reactnative.plugins.APReactNativeAdapter",
     "require_startup_execution": false,
     "react_packages": [
-      "com.rnds.DirectedScrollViewPackage"
+      "com.rnds.DirectedScrollViewPackage",
+      "com.oblador.vectoricons.VectorIconsPackage"
     ]
   },
+  "dependency_name": "@applicaster/multi-channel-epg-screen",
+  "dependency_version": "1.0.6",
   "name": "MultiChannelEpgScreen",
   "type": "general",
   "platform": "android",
@@ -19,11 +22,15 @@
   "ui_builder_support": true,
   "screen": true,
   "npm_dependencies": [
-    "@applicaster/react-native-directed-scrollview@^1.0.0"
+    "@applicaster/react-native-directed-scrollview@^1.0.0",
+    "@applicaster/react-native-vector-icons@6.0.3"
   ],
   "project_dependencies": [
     {
       "react-native-directed-scrollview": "node_modules/@applicaster/react-native-directed-scrollview/android"
+    },
+    {
+      "react-native-vector-icons": "node_modules/@applicaster/react-native-vector-icons/android"
     }
   ],
   "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.0/android/index.android.bundle.js",
