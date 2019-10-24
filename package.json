@@ -1,6 +1,6 @@
 {
   "name": "@applicaster/multi-channel-epg-screen",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "RN screen plugin with scrollable horizontal list of epg for multiple channels",
   "main": "./export.js",
   "scripts": {
