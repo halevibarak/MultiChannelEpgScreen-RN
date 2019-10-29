@@ -57,7 +57,7 @@
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
     "react-test-renderer": "16.8.3",
-    "eslint": "^3.12.2",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-babel": "^4.0.0",
     "eslint-plugin-es-beautifier": "^1.0.1",
