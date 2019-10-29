@@ -39,3 +39,7 @@ export function getConfig(configKey) {
 
 	return configValue;
 }
+
+export function getString(stringKey, defaultValue) {
+	return 'Now' || defaultValue;
+}

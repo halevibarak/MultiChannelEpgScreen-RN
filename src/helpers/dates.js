@@ -1,5 +1,7 @@
 import moment from 'moment/min/moment-with-locales';
 
+import * as Zapp from '../zapp/config';
+
 export const Program = {
   DURATION_WIDTH_MINUTE_MULT: 8,
   TIMEBAR_MINUTES_INTERVAL: 30
@@ -77,12 +79,12 @@ export function getDayTitle(day) {
 
   const today = moment();
   if (date.isSame(today, 'day')) {
-    return 'Heute';
+    return Zapp.getString('day_selector_today_text', 'Heute');
   }
 
   const tomorrow = today.add(1, 'days');
   if (date.isSame(tomorrow, 'day')) {
-    return 'Morgen';
+    return Zapp.getString('day_selector_tomorrow_text', 'Morgen');
   }
 
   return date.format(EPG_DAY_FORMAT);

@@ -8,7 +8,7 @@
     ]
   },
   "dependency_name": "@applicaster/multi-channel-epg-screen",
-  "dependency_version": "1.0.7",
+  "dependency_version": "1.0.8",
   "name": "MultiChannelEpgScreen",
   "type": "general",
   "platform": "android",
@@ -16,7 +16,7 @@
   "author_name": "S. Borkin",
   "description": "Scrollable horizontal list of epg for multiple channels",
   "author_email": "s.borkin@applicaster.com",
-  "manifest_version": "1.0.2",
+  "manifest_version": "1.0.1",
   "min_zapp_sdk": "10.0.0",
   "react_native": true,
   "ui_builder_support": true,
@@ -33,10 +33,11 @@
       "react-native-vector-icons": "node_modules/@applicaster/react-native-vector-icons/android"
     }
   ],
-  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.7/android/index.android.bundle.js",
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.8/android/index.android.bundle.js",
   "extra_dependencies": [],
   "whitelisted_account_ids": [
-    "5818cf82279a4a000ff1b6aa"
+    "5818cf82279a4a000ff1b6aa",
+    "5cb825e102507200087bbdcc"
   ],
   "dependency_repository_url": [],
   "deprecated_since_zapp_sdk": "",
@@ -45,6 +46,27 @@
     {
       "type": "text",
       "key": "dsp_name"
+    },
+    {
+      "key": "day_selector_today_text",
+      "label": "Today text",
+      "type": "text",
+      "initial_value": "Today",
+      "label_tooltip": "text for the day selector"
+    },
+    {
+      "key": "day_selector_tomorrow_text",
+      "label": "Tomorrow text",
+      "type": "text",
+      "initial_value": "Tomorrow",
+      "label_tooltip": "text for the day selector"
+    },
+    {
+      "key": "program_list_go_to_now_text",
+      "label": "Go to now text",
+      "type": "text",
+      "initial_value": "Now",
+      "label_tooltip": "text for the floating go to now button"
     }
   ],
   "data": {
@@ -320,20 +342,6 @@
         "type": "color_picker_rgba",
         "initial_value": "rgba(255, 255, 255, 1)",
         "label_tooltip": "bg color for the button that scrolls the epg list to the current time"
-      },
-      {
-        "key": "day_selector_today_text",
-        "label": "Today text",
-        "type": "text",
-        "initial_value": "Today",
-        "label_tooltip": "text for the day selector"
-      },
-      {
-        "key": "day_selector_tomorrow_text",
-        "label": "Tomorrow text",
-        "type": "text",
-        "initial_value": "Tomorrow",
-        "label_tooltip": "text for the day selector"
       },
       {
         "key": "program_info_screen_bg_color",

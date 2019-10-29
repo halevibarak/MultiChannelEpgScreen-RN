@@ -61,7 +61,7 @@ class ChannelList extends Component {
         onPress={() => this.scrollToNow(true)}
         style={this.styles.goToNowContainer}>
         <Text
-          style={this.styles.goToNow}>Jetzt</Text>
+          style={this.styles.goToNow}>{Zapp.getString('program_list_go_to_now_text', 'Jetzt')}</Text>
       </TouchableOpacity>
     );
   }
