@@ -8,7 +8,7 @@
     ]
   },
   "dependency_name": "@applicaster/multi-channel-epg-screen",
-  "dependency_version": "1.0.8",
+  "dependency_version": "1.0.9",
   "name": "MultiChannelEpgScreen",
   "type": "general",
   "platform": "android",
@@ -16,7 +16,7 @@
   "author_name": "S. Borkin",
   "description": "Scrollable horizontal list of epg for multiple channels",
   "author_email": "s.borkin@applicaster.com",
-  "manifest_version": "1.0.1",
+  "manifest_version": "1.0.2",
   "min_zapp_sdk": "10.0.0",
   "react_native": true,
   "ui_builder_support": true,
@@ -33,7 +33,7 @@
       "react-native-vector-icons": "node_modules/@applicaster/react-native-vector-icons/android"
     }
   ],
-  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.8/android/index.android.bundle.js",
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.9/android/index.android.bundle.js",
   "extra_dependencies": [],
   "whitelisted_account_ids": [
     "5818cf82279a4a000ff1b6aa",
