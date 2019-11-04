@@ -41,5 +41,5 @@ export function getConfig(configKey) {
 }
 
 export function getString(stringKey, defaultValue) {
-	return 'Now' || defaultValue;
+	return getConfig(stringKey) || defaultValue;
 }

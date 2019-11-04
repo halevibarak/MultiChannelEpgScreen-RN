@@ -7,7 +7,7 @@
     ]
   },
   "dependency_name": "@applicaster/multi-channel-epg-screen",
-  "dependency_version": "1.0.9",
+  "dependency_version": "1.0.10",
   "name": "MultiChannelEpgScreen",
   "type": "general",
   "platform": "ios",
@@ -23,7 +23,7 @@
   "npm_dependencies": [
     "@applicaster/react-native-directed-scrollview@^1.0.0"
   ],
-  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.9/ios/index.ios.bundle.js",
+  "react_bundle_url": "https://assets-production.applicaster.com/zapp/react-native-bundles/MultiChannelEpgScreen/1.0.10/ios/index.ios.bundle.js",
   "extra_dependencies": [
     {
       "RCTDirectedScrollView": ":path => 'node_modules/@applicaster/RCTDirectedScrollView.podspec"
